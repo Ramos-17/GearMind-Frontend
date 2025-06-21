@@ -1,0 +1,330 @@
+/* WelcomePage - Mobile-First Responsive Design */
+
+/* Base mobile styles (default) */
+.welcome-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Hero Section - Mobile First */
+.hero-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.hero-content {
+  max-width: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 100%;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Hero Buttons - Mobile First */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.primary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.primary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Hero Features - Mobile First */
+.hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+  font-size: 1.25rem;
+  color: #10b981;
+  font-weight: bold;
+}
+
+.feature span:last-child {
+  color: white;
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Tablet Styles (768px and up) */
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 3rem 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-btn {
+    width: auto;
+    min-width: 200px;
+    padding: 1.125rem 2.5rem;
+    font-size: 1.125rem;
+  }
+
+  .hero-features {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .feature {
+    flex: 1;
+    padding: 1.25rem;
+  }
+
+  .feature span:last-child {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop Styles (1024px and up) */
+@media (min-width: 1024px) {
+  .welcome-container {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .welcome-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+  }
+
+  .hero-section {
+    padding: 4rem 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.375rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+  }
+
+  .hero-buttons {
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-btn {
+    padding: 1.25rem 3rem;
+    font-size: 1.25rem;
+    min-width: 220px;
+  }
+
+  .hero-features {
+    gap: 2rem;
+    max-width: 700px;
+  }
+
+  .feature {
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .feature:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .feature span:last-child {
+    font-size: 1.125rem;
+  }
+}
+
+/* Large Desktop Styles (1440px and up) */
+@media (min-width: 1440px) {
+  .hero-content {
+    max-width: 1000px;
+  }
+
+  .hero-content h1 {
+    font-size: 4.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    max-width: 800px;
+  }
+
+  .hero-buttons {
+    gap: 2.5rem;
+  }
+
+  .hero-btn {
+    padding: 1.5rem 3.5rem;
+    font-size: 1.375rem;
+    min-width: 250px;
+  }
+}
+
+/* Accessibility and Focus States */
+.hero-btn:focus,
+.login-btn:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .hero-btn,
+  .login-btn,
+  .feature {
+    transition: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .welcome-container {
+    background: #1a1a1a;
+  }
+  
+  .hero-content h1,
+  .hero-subtitle,
+  .feature span:last-child {
+    color: #ffffff;
+  }
+  
+  .primary-btn {
+    background: #000000;
+    border: 2px solid #ffffff;
+  }
+}
