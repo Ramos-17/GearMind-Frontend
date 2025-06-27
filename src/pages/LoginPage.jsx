@@ -1,6 +1,7 @@
 // src/pages/LoginPage.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { apiFetch } from "../utils/api";
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -12,25 +13,18 @@ const LoginPage = () => {
   const handleLogin = async () => {
   console.log(' handleLogin fired');
   try {
-    const response = await fetch("/api/auth/login", {
+    const response = await apiFetch("/api/auth/login", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
     });
 
-    if (!response.ok) {
-      const msg = await response.text();
-      throw new Error(msg || "Login failed");
-    }
-
-    const { accessToken, tokenType } = await response.json();
-    console.log("🔐 Received token:", { accessToken: accessToken.substring(0, 50) + "...", tokenType });
+    console.log("🔐 Received token:", { accessToken: response.accessToken.substring(0, 50) + "...", tokenType: response.tokenType });
     
     // Store just the token, api.js will add the Bearer prefix
-    sessionStorage.setItem("token", accessToken);
+    sessionStorage.setItem("token", response.accessToken);
 
     // manually decode the payload
-    const base64Payload = accessToken.split('.')[1];
+    const base64Payload = response.accessToken.split('.')[1];
     console.log("📦 Base64 payload:", base64Payload);
     
     const payload = JSON.parse(atob(base64Payload));
