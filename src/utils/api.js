@@ -1,14 +1,22 @@
 export async function apiFetch(path, { headers = {}, ...opts } = {}) {
   const token = sessionStorage.getItem('token');
   
+  // Get base URL from environment variable, fallback to empty string for relative URLs
+  const baseUrl = import.meta.env.VITE_API_URL || '';
+  
+  // Construct full URL by combining base URL and path
+  const fullUrl = baseUrl + path;
+  
   console.log('🌐 API Request:', {
     path,
+    fullUrl,
+    baseUrl,
     token: token ? `${token.substring(0, 20)}...` : 'null',
     method: opts.method || 'GET',
     headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}), ...headers }
   });
   
-  const res = await fetch(path, {
+  const res = await fetch(fullUrl, {
     ...opts,
     headers: {
       'Content-Type': 'application/json',
